@@ -28,11 +28,10 @@ const product = useField('product')
 const { mutate } = useMutation({
   mutationFn: insertClientOrder,
   onSuccess: () => {
-    console.log('Deu certo')
     resetForm()
     dialog.value = false
 
-    queryClient.invalidateQueries({ queryKey: ['orders'] });
+    queryClient.invalidateQueries({ queryKey: ['orders'] })
   }
 })
 
